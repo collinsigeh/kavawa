@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->foreignId('country_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('country_id')->nullable()->constrained()->cascadeOnDelete();
             $table->boolean('is_business')->default(false);
             $table->string('business_name')->nullable();
             $table->string('contact_person')->nullable();

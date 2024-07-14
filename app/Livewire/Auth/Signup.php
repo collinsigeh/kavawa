@@ -34,6 +34,7 @@ class Signup extends Component
             $this->password = session('password');
             session(['password' => '']);
         }
+        
         $this->countries = Country::orderBy('name', 'asc')->get();
     }
 

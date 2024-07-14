@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EntityController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,10 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::middleware('auth')->group(function(){
+
+    Route::get('/entities', [EntityController::class, 'index'])->name('entities.index');
+    Route::get('/entities/{id}', [EntityController::class, 'show'])->name('entities.show');
+    Route::get('/entities/{id}/edit', [EntityController::class, 'edit'])->name('entities.edit');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');

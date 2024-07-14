@@ -119,6 +119,47 @@ footer {
 .custom-title {
   color: #032d60;
 }
+.custom-btn-sm-primary {
+  background-color: #0b8dc5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid #077cad;
+  border-radius: 6px;
+}
+a.custom-btn-sm-primary {
+  padding: 8px 14px;
+}
+button.custom-btn-sm-primary, input.custom-btn-sm-primary {
+  padding: 4px 14px;
+}
+.custom-btn-sm-primary:hover{
+  cursor: pointer;
+  color: #fff;
+  background-color: #0b84b8;
+  border-color: #077cad;
+}
+.custom-btn-sm-outline-primary {
+  color: #077cad;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid #077cad;
+  border-radius: 6px;
+}
+a.custom-btn-sm-outline-primary {
+  padding: 8px 14px;
+}
+button.custom-btn-sm-outline-primary, input.custom-btn-sm-outline-primary {
+  padding: 4px 14px;
+}
+.custom-btn-sm-outline-primary:hover{
+  color: #fff;
+  cursor: pointer;
+  background-color: #0b84b8;
+  border-color: #077cad;
+}
 .custom-btn-primary {
   background-color: #0b8dc5;
   color: #fff;

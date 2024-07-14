@@ -20,7 +20,7 @@
         </a>
       </li>
       <li>
-        <a href="#" wire:navigate class="nav-link px-3 active">
+        <a href="{{ route('entities.index') }}" wire:navigate class="nav-link px-3 active">
           <span class="me-2"><i class="bi bi-briefcase"></i></span>
           <span>Entities</span>
         </a>

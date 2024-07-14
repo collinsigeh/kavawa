@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h1 class="custom-title">Admin dashboard</h1>
+            <h2 class="custom-title">Admin dashboard</h2>
         </div>
     </div>
 
