@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -24,7 +25,14 @@ class User extends Authenticatable
         'country_id',
         'is_primary',
         'is_admin',
-        'is_active'
+        'is_active',
+        'is_business',
+        'business_name',
+        'contact_person',
+        'contact_email',
+        'contact_phone',
+        'contact_address',
+        'website'
     ];
 
     /**
@@ -53,5 +61,20 @@ class User extends Authenticatable
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function entities(): HasMany
+    {
+        return $this->hasMany(Entity::class);
+    }
+
+    public function managers(): HasMany
+    {
+        return $this->hasMany(Manager::class);
+    }
+
+    public function tassignmenthistories(): HasMany
+    {
+        return $this->hasMany(Tassignmenthistory::class);
     }
 }

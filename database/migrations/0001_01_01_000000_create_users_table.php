@@ -22,6 +22,13 @@ return new class extends Migration
             $table->boolean('is_primary')->default(false);
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_active')->default(true);
+            $table->boolean('is_business')->default(false);
+            $table->string('business_name')->nullable();
+            $table->string('contact_person')->nullable();
+            $table->string('contact_email')->nullable();
+            $table->string('contact_phone')->nullable();
+            $table->string('contact_address')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
 
