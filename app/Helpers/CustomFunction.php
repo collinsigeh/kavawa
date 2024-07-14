@@ -14,10 +14,13 @@ class CustomFunction{
         $unique_slug_created = 0;
         $try = 0;
 
+        $name_parts = explode(' ', $name);
+        $name_part_taken = $name_parts[0];
+
         while($unique_slug_created < 1)
         {
             $appendix = $try == 0 ? '' : $try;
-            $slug = Str::slug($name.' '.$appendix);
+            $slug = Str::slug($name_part_taken.' '.$appendix);
             if(!Entity::where('slug', $slug)->first())
             {
                 $unique_slug_created++;
