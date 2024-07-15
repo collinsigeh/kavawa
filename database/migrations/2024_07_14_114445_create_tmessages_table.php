@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('ticket_id');
             $table->text('content');
             $table->boolean('is_reply_to_customer')->default(false);
-            $table->boolean('manager_id')->nullable()->constrained()->cascadeOnDelete(); // the manager that wrote or was the first to view this message
+            $table->boolean('manager_id')->nullable()->constrained()->cascadeOnDelete(); // the manager that wrote the message
             $table->boolean('is_seen_by_manager')->default(false); // will be marked as true if the message was posted by a manager
             $table->boolean('is_seen_by_customer')->default(false); // will be marked as true if the message was posted by a customer
             $table->timestamps();

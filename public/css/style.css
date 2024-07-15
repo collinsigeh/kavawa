@@ -285,13 +285,15 @@ table.with-links a:hover {
   margin-bottom: 20px;
 }
 .manager-message {
-  margin-left: 100px;
+  margin-left: 70px;
+  margin-bottom: 10px;
   background-color: rgb(165, 197, 165);
   padding: 20px;
   border-radius: 8px 0 0 8px;
 }
 .customer-message {
-  margin-right: 100px;
+  margin-right: 70px;
+  margin-bottom: 10px;
   background-color: rgb(183, 204, 216);
   padding: 20px;
   border-radius: 0 8px 8px 0;
