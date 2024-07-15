@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('subject'); // descriptive summary of the complain
             $table->string('token'); // unique identifier that will be used to view (without logging in) this ticket and it's adjoining thread of messages.
-            $table->foreignId('entity_id'); // The entity this ticket was submitted to.
-            $table->foreignId('manager_id'); // The person who's been selected or opted to take care of this ticket.
+            $table->foreignId('entity_id')->constrained()->cascadeOnDelete(); // The entity this ticket was submitted to.
+            $table->foreignId('manager_id')->nullable()->constrained()->cascadeOnDelete(); // The person who's been selected or opted to take care of this ticket.
             $table->boolean('is_open')->default(true); // whether conversation is still opened for this ticket
-            $table->foreignId('customer_id'); // the person who created the support ticket
+            $table->foreignId('customer_id')->constrained()->cascadeOnDelete(); // the person who created the support ticket
             $table->timestamps();
         });
     }

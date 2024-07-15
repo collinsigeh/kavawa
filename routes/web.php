@@ -6,6 +6,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/{slug?}/portal/support', [PageController::class, 'supportPortal'])->name('portal.support.index');
+Route::get('/{slug?}/portal', [PageController::class, 'portal'])->name('portal.index');
+
 Route::get('/setting/run', [SettingController::class, 'run'])->name('setting.run');
 Route::get('/', [PageController::class, 'home'])->name('home');
 

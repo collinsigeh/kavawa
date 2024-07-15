@@ -247,7 +247,7 @@ button.custom-btn-lg-outline-primary, input.custom-btn-lg-outline-primary {
   text-decoration: underline;
 }
 #main-body {
-  min-height: 500px;
+  min-height: 550px;
 }
 .entity-list .entity-item {
   background-color: #f5f5f5;
@@ -264,4 +264,11 @@ button.custom-btn-lg-outline-primary, input.custom-btn-lg-outline-primary {
 .entity-list .entity-item a:hover {
   text-decoration: underline;
   color: #747474;
+}
+.support-ticket-option {
+  border: 1px solid #032d60;
+  border-top: 3px solid #032d60;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 40px;
 }
