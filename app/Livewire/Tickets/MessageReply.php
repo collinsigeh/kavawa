@@ -42,7 +42,7 @@ class MessageReply extends Component
                 'error_message' => 'ERROR: '.$e->getMessage()
             ]);
         }
-        $this->redirect(route('tickets.show', $this->ticket_id), navigate:true);
+        return $this->redirect(route('tickets.show', $this->ticket_id), navigate:true);
     }
 
     public function render()

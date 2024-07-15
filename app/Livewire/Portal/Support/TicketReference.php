@@ -29,7 +29,7 @@ class TicketReference extends Component
                 session([
                     'error_message' => 'The reference token: <b>'.$this->token.'</b> is invalid.'
                 ]);
-                $this->redirect(route('portal.support.index', $this->entity_slug), navigate:true);
+                return $this->redirect(route('portal.support.index', $this->entity_slug), navigate:true);
             }
         }
         catch(\Exception $e)
@@ -37,9 +37,9 @@ class TicketReference extends Component
             session([
                 'error_message' => 'The reference token: <b>'.$this->token.'</b> is invalid.'
             ]);
-            $this->redirect(route('portal.support.index', $this->entity_slug), navigate:true);
+            return $this->redirect(route('portal.support.index', $this->entity_slug), navigate:true);
         }
-        $this->redirect(route('portal.support.ticket.show', [$this->entity_slug, $ticket->id]), navigate:true);
+        return $this->redirect(route('portal.support.ticket.show', [$this->entity_slug, $ticket->id]), navigate:true);
     }
 
     public function render()
