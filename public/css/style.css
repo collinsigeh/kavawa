@@ -249,3 +249,19 @@ button.custom-btn-lg-outline-primary, input.custom-btn-lg-outline-primary {
 #main-body {
   min-height: 500px;
 }
+.entity-list .entity-item {
+  background-color: #f5f5f5;
+  border-top: 2px solid #032d60;
+  border-bottom: 1px dotted #032d60;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.entity-list .entity-item a:link {
+  text-decoration: none;
+  color: #444;
+}
+.entity-list .entity-item a:hover {
+  text-decoration: underline;
+  color: #747474;
+}
