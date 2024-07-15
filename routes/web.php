@@ -7,6 +7,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/{slug?}/portal/support/ticket/{ticket}', [PageController::class, 'showSupportTicket'])->name('portal.support.ticket.show');
 Route::get('/{slug?}/portal/support', [PageController::class, 'supportPortal'])->name('portal.support.index');
 Route::get('/{slug?}/portal', [PageController::class, 'portal'])->name('portal.index');
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\Entity;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -38,5 +39,18 @@ class PageController extends Controller
         return view('portal.support.home', [
             'entity' => $entity
         ]);
+    }
+
+    public function showSupportTicket(String $slug = null, Ticket $ticket)
+    {
+        $entity = Entity::where('slug', $slug)->first();
+        if(!$entity)
+        {
+            return view('portal.404');
+        }
+        // return view('portal.support.home', [
+        //     'entity' => $entity
+        // ]);
+        dd('I got here with: '.$ticket->subject);
     }
 }
