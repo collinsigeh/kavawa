@@ -272,3 +272,15 @@ button.custom-btn-lg-outline-primary, input.custom-btn-lg-outline-primary {
   padding: 20px;
   margin-bottom: 40px;
 }
+table.with-links a:link {
+  text-decoration: none;
+  color: #444;
+}
+table.with-links a:hover {
+  text-decoration: underline;
+}
+.ticket-notice-item {
+  background-color: #e9e9e9;
+  padding: 15px;
+  margin-bottom: 20px;
+}

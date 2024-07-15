@@ -10,7 +10,7 @@
           <table
             id="example"
             class="table table-striped data-table"
-            style="width: 100%; font-size: 12px; padding: 15px 0; color: #727272;"
+            style="width: 100%; padding: 15px 0; color: #727272;"
           >
             <thead>
               <tr>

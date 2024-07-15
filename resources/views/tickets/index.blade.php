@@ -5,9 +5,9 @@
     @include('inc.feedback_messages')
 
     <div class="mb-4">
-        <h2 class="custom-title">Dashboard</h2>
+        <h2 class="custom-title">{{ $entity->name.' Tickets'}}</h2>
     </div>
     
-    @livewire('tickets.ticket-notice')
+    <livewire:tickets.ticket-list :entity="$entity" />
 
 @endsection
