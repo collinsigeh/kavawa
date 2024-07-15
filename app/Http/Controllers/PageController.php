@@ -48,9 +48,9 @@ class PageController extends Controller
         {
             return view('portal.404');
         }
-        // return view('portal.support.home', [
-        //     'entity' => $entity
-        // ]);
-        dd('I got here with: '.$ticket->subject);
+        return view('portal.support.ticket.show', [
+            'entity' => $entity,
+            'ticket' => $ticket
+        ]);
     }
 }
