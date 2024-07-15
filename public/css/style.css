@@ -284,3 +284,15 @@ table.with-links a:hover {
   padding: 15px;
   margin-bottom: 20px;
 }
+.manager-message {
+  margin-left: 100px;
+  background-color: rgb(165, 197, 165);
+  padding: 20px;
+  border-radius: 8px 0 0 8px;
+}
+.customer-message {
+  margin-right: 100px;
+  background-color: rgb(183, 204, 216);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}

@@ -13,6 +13,7 @@ class Tmessage extends Model
     protected $fillable = [
         'ticket_id',
         'content',
+        'is_reply_to_customer',
         'manager_id',
         'is_seen_by_manager',
         'is_seen_by_customer'
