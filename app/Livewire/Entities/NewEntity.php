@@ -5,6 +5,7 @@ namespace App\Livewire\Entities;
 use App\Helpers\CustomFunction;
 use App\Models\Country;
 use App\Models\Entity;
+use App\Models\Manager;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -68,6 +69,14 @@ class NewEntity extends Component
             $entity->country_id = $this->country;
 
             $entity->save();
+
+            $manager = new Manager();
+
+            $manager->entity_id = $entity->id;
+            $manager->user_id = Auth::user()->id;
+            $manager->is_manager = true;
+
+            $manager->save();
 
             session(['name' => '']);
         }

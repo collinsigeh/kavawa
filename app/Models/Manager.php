@@ -14,7 +14,8 @@ class Manager extends Model
     protected $fillable = [
         'entity_id',
         'user_id',
-        'is_manager'
+        'is_manager',
+        'is_active'
     ];
 
     public function entity(): BelongsTo

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('entity_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->boolean('is_manager')->default(false); // if manager, then he can control other other managers and assign tasks (e.g. a ticket) to them.
+            $table->boolean('is_active')->default(true); 
             $table->timestamps();
         });
     }
