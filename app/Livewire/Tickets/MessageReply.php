@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Tickets;
 
+use App\Models\Manager;
 use App\Models\Tmessage;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -9,11 +10,11 @@ use Livewire\Component;
 class MessageReply extends Component
 {
     public $content;
-    public $ticket_id;
+    public $ticket;
 
-    public function mount($ticket_id = null)
+    public function mount($ticket)
     {
-        $this->ticket_id = $ticket_id;
+        $this->ticket = $ticket;
     }
 
     public function saveMessage()
@@ -24,11 +25,13 @@ class MessageReply extends Component
 
         try
         {
+            $manager = Manager::where('user_id', Auth::user()->id)->where('entity_id', $this->ticket->entity->id)->first();
+
             $message = new Tmessage();
-            $message->ticket_id = $this->ticket_id;
+            $message->ticket_id = $this->ticket->id;
             $message->content = $this->content;
             $message->is_reply_to_customer = true;
-            $message->manager_id = Auth::user()->id;
+            $message->manager_id = $manager->id;
             $message->is_seen_by_manager = true;
             $message->save();
 
@@ -42,7 +45,7 @@ class MessageReply extends Component
                 'error_message' => 'ERROR: '.$e->getMessage()
             ]);
         }
-        return $this->redirect(route('tickets.show', $this->ticket_id), navigate:true);
+        return $this->redirect(route('tickets.show', $this->ticket->id), navigate:true);
     }
 
     public function render()

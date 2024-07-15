@@ -21,12 +21,17 @@
                     @foreach ($my_entities as $item)
                         <div class="col-sm-6 col-md-4 col-xl-3">
                             <div class="entity-item">
-                                <a href="#">{{ $item->name }}</a>
-                                @if ($item->is_active)
-                                    <i class="bi bi-check-circle float-end" style="color: #2e844a" title="Active"></i>
-                                @else
-                                    <i class="bi bi-x-circle float-end" style="color: #e90000;" title="Inactive"></i>
-                                @endif
+                                <div>
+                                    <a href="#">{{ $item->name }}</a>
+                                    @if ($item->is_active)
+                                        <i class="bi bi-check-circle float-end" style="color: #2e844a" title="Active"></i>
+                                    @else
+                                        <i class="bi bi-x-circle float-end" style="color: #e90000;" title="Inactive"></i>
+                                    @endif
+                                </div>
+                                <div style="background-color: #fff; padding: 8px; margin-top: 15px; font-size: 12px;">
+                                    {{ route('portal.support.index', $item->slug)}}
+                                </div>
                             </div>
                         </div>
                     @endforeach

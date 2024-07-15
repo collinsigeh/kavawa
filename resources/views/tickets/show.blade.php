@@ -32,9 +32,9 @@
     </div>
     
     @livewire('tickets.messages', ['ticket_id' => $ticket->id ])
-
+ 
     @include('inc.feedback_messages')
 
-    @livewire('tickets.message-reply', ['ticket_id' => $ticket->id ])
+    @livewire('tickets.message-reply', ['ticket' => $ticket ])
 
 @endsection
